@@ -54,6 +54,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
+  .state('tab.precos', {
+    url: '/precos',
+    views: {
+      'tab-precos': {
+        templateUrl: 'templates/tab-precos.html',
+        controller: 'PrecosCtrl'
+      }
+    }
+  })
+
   .state('tab.cadastro', {
     url: '/cadastro',
     views: {

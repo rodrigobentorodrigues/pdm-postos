@@ -5,20 +5,24 @@ navigation history that also transitions its views in and out.
 -->
 <ion-tabs class="tabs-icon-top tabs-color-active-positive">
 
-  <!-- Dashboard Tab -->
-  <ion-tab title="Status" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/dash">
+  <!-- Cadastrar Postos -->
+  <ion-tab title="Cadastrar Postos" icon-off="ion-ios-download-outline" icon-on="ion-ios-download-outline" href="#/tab/dash">
     <ion-nav-view name="tab-dash"></ion-nav-view>
   </ion-tab>
 
-  <!-- Chats Tab -->
-  <ion-tab title="Postos" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/postos">
+  <!-- Listar todos -->
+  <ion-tab title="Listar Postos" icon-off="ion-ios-list-outline" icon-on="ion-ios-list-outline" href="#/tab/postos">
     <ion-nav-view name="tab-postos"></ion-nav-view>
   </ion-tab>
 
-  <!-- Account Tab -->
-  <ion-tab title="Cadastro" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/cadastro">
-    <ion-nav-view name="tab-cadastro"></ion-nav-view>
+    <!-- Precos -->
+  <ion-tab title="Inserir Preços" icon-off="ion-ios-calculator-outline" icon-on="ion-ios-calculator-outline" href="#/tab/precos">
+    <ion-nav-view name="tab-precos"></ion-nav-view>
   </ion-tab>
 
+  <!-- Maps -->
+  <ion-tab title="Mapa" icon-off="ion-map" icon-on="ion-map" href="#/tab/cadastro">
+    <ion-nav-view name="tab-cadastro"></ion-nav-view>
+  </ion-tab>
 
 </ion-tabs>

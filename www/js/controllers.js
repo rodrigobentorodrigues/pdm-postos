@@ -12,6 +12,8 @@ angular.module('starter.controllers', [])
 
 })
 
+.controller('PrecosCtrl', function($scope) {})
+
 // Buscar por ID
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
   $scope.chat = Chats.get($stateParams.chatId);
