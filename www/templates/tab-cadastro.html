@@ -1,6 +1,35 @@
-<ion-view view-title="Mapa">
-  <ion-content>
-  <div style="margin-top: 20px;">
-  	<h1 class="text-center">Mapa</h1>
+<ion-view view-title="Adicionar Posto">
+  <ion-content class="padding">
+
+    <!-- <form name="addForm" novalidate="" ng-submit="addPosto(addForm)"> -->
+    <form name="addForm" novalidate="" ng-submit="createNewPosto(posto)">
+
+      <label class="item item-input">
+        <span class = "input-label">Nome</span>
+        <input type="text" placeholder = "Posto ..." ng-model="posto.name"/>
+      </label>
+
+      <label class="item item-input">
+        <span class = "input-label">Bandeira</span>
+        <input type="text" placeholder = "Bandeira" ng-model="posto.bandeira"/>
+      </label>
+
+      <label class="item item-input">
+        <span class = "input-label">Latitude</span>
+        <input type="text" placeholder = "Latitude" ng-model="posto.lat"/>
+      </label>
+
+      <label class="item item-input">
+        <span class = "input-label">Longitude</span>
+        <input type="text" placeholder = "Longitude" ng-model="posto.lng"/>
+      </label>
+
+      <button class="button button-full button-positive" type="submit">
+        Adicionar
+      </button>
+
+    </form>
+
+
   </ion-content>
 </ion-view>
