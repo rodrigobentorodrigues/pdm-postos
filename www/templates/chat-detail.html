@@ -4,11 +4,36 @@
   The FriendsCtrl pulls data from the Friends service (service.js)
   The Friends service returns an array of friend data
 -->
-<ion-view view-title="{{chat.name}}">
+
+<ion-view view-title="{{posto.name}}" cache-view="false">
+
   <ion-content class="padding">
-    <img ng-src="{{chat.face}}" style="width: 64px; height: 64px">
-    <p>
-      {{chat.lastText}}
-    </p>
+
+    <ion-list>
+      <ion-item class="item-remove-animate " ng-repeat="preco in precos" type="item-text-wrap">
+        <div class="row">
+          <div class="col text-center">Data/hora: {{preco.datapreco | date : 'dd/MM/yyyy'}}</div>
+        </div>
+        <div class="row">
+
+          <div class="col text-center">
+            <p>Gasolina: {{preco.gas | currency : "R$ "}}</p>
+            <p>Álcool: {{preco.alc | currency : "R$ "}}</p>
+            <p>Diesel: {{preco.die | currency : "R$ "}}</p>
+          </div>
+
+
+        </div>
+      </ion-item>
+    </ion-list>
+
+
+    <div class="row">
+        <button class="button button-block button-positive" ng-click="toAddPrice()">
+          Adicionar Preço
+        </button>
+
+    </div>
+
   </ion-content>
 </ion-view>

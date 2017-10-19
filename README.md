@@ -1,26 +1,32 @@
-Ionic App Base
-==============
+**Instituto Federal de Educação, Ciência e Tecnologia da Paraíba**
 
-A starting project for Ionic that optionally supports using custom SCSS.
+**Campus Cajazeiras**
 
-## Using this project
+**Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas**
 
-We recommend using the [Ionic CLI](https://github.com/ionic-team/ionic-cli) to create new Ionic projects that are based on this project but use a ready-made starter template.
+**Programação par Dispositivos Móveis**
 
-For example, to start a new Ionic project with the default tabs interface, make sure the `ionic` utility is installed:
+**Professor Aristofânio Garcia**
 
-```bash
-$ npm install -g ionic cordova
-```
+<hr/>
 
-Then run:
+## Atividade Colaborativa (Híbrida)
 
-```bash
-$ ionic start myProject tabs --type=ionic1
-```
+#### Equipe:
+Juan,
+Natarajan,
+Rodrigo,
+Wellington
 
-More info on this can be found on the Ionic [Getting Started](https://ionicframework.com/getting-started) page and the [Ionic CLI](https://github.com/ionic-team/ionic-cli) repo.
+#### Objetivo
 
-## Issues
+Construa um aplicativo que possibilite o seu usuário cadastrar, listar e pesquisar postos de combustíveis e os preços praticados por estes postos para a gasolina, o alcool e o diesel.
 
-Issues have been disabled on this repo. If you do find an issue or have a question, consider posting it on the [Ionic Forum](https://forum.ionicframework.com/). If there is truly an error, follow our guidelines for [submitting an issue](https://ionicframework.com/submit-issue/) to the main Ionic repository.
+#### Funcionalidades
+
+
+| Código | Descrição |
+|----|----|
+| US 001 | Como usrmob eu desejo cadastrar um posto de combustível para que eu possa manter um histórico dos preços praticados por estes postos. <br> Dados: <br> - Nome, <br>- Posição geográfica (latitude e longitude),<br> - Bandeira |
+| US 002 | Como usrmob eu desejo listar todos os postos de combustíveis cadastrados para que eu possa selecionar um para visualizar o histórico ou cadastrar os preços praticados.|
+| US 003 | Como usrmob eu desejo visualizar no mapa os postos cadastrados para que eu possa saber qual o mais próximo de mim.

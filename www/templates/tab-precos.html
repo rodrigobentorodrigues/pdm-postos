@@ -1,5 +1,30 @@
-<ion-view view-title="Precos">
+<ion-view view-title="Adicionar Histórico">
   <ion-content class="padding">
-    <h2>Inserir valores para o posto!</h2>    
+
+    <form name="addPriceForm" novalidate="" ng-submit="addPriceHistory()">
+
+      <label class="item item-input">
+        <span class = "input-label">Gasolina</span>
+        <input type="number" step="0.01" min="0" placeholder="Preço da Gasolina" ng-model="preco.gas"/>
+      </label>
+
+      <label class="item item-input">
+        <span class = "input-label">Álcool</span>
+        <input type="number" step="0.01" min="0" placeholder="Preço do Álcool" ng-model="preco.alc"/>
+      </label>
+
+      <label class="item item-input">
+        <span class = "input-label">Diesel</span>
+        <input type="number" step="0.01" min="0" placeholder="Preço do Diesel" ng-model="preco.die"/>
+      </label>
+
+
+      <button class="button button-full button-positive" type="submit">
+        Adicionar
+      </button>
+
+    </form>
+
+
   </ion-content>
 </ion-view>
