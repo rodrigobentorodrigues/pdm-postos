@@ -57,8 +57,9 @@ angular.module('starter.controllers', [])
   $scope.updatePrecos = function(id_posto) {
     console.log("idposto:" + id_posto);
     Precos.allByPosto(id_posto).then(function(precos){
-      $scope.precos = precos;
 
+      $scope.precos = precos;
+      console.log(precos);
     });
   }
 
@@ -143,7 +144,7 @@ angular.module('starter.controllers', [])
       zoom: 16,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
-    
+
     map = new google.maps.Map(document.getElementById("map"),
         mapOptions);
 

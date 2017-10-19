@@ -78,7 +78,9 @@ angular.module('starter.services', [])
 
   self.allByPosto = function(postoId) {
     var parameters = [postoId];
-    return DBA.query("SELECT id, gas, alc FROM preco WHERE id_posto = (?) order by id desc", parameters)
+    // return DBA.query("SELECT id, gas, alc, datapreco FROM preco WHERE id_posto = (?) order by id desc", parameters)
+    return DBA.query("SELECT id, gas, alc, strftime('%d/%m/%Y %H:%M', datapreco, 'localtime') as datapreco FROM preco WHERE id_posto = (?) order by datapreco desc", parameters)
+    // return DBA.query("SELECT id, gas, alc, datapreco FROM preco WHERE id_posto = (?) order by datapreco desc", parameters)
       .then(function(result){
         return DBA.getAll(result);
       });

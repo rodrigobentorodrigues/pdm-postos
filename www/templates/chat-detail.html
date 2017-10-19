@@ -12,9 +12,14 @@
     <ion-list>
       <ion-item class="item-remove-animate " ng-repeat="preco in precos" type="item-text-wrap">
         <div class="row">
-          <div class="col col-20">Id: {{preco.id}}</div>
+          <div class="col text-center">Data/hora: {{preco.datapreco | date : 'dd/MM/yyyy'}}</div>
+        </div>
+        <div class="row">
+          <!-- <div class="col col-20">Id: {{preco.id}}</div> -->
+
           <div class="col text-center">Gasolina: {{preco.gas | currency : "R$ "}}</div>
           <div class="col text-center">Álcool: {{preco.alc | currency : "R$ "}}</div>
+
         </div>
       </ion-item>
     </ion-list>
@@ -26,6 +31,6 @@
         </button>
 
     </div>
-    
+
   </ion-content>
 </ion-view>

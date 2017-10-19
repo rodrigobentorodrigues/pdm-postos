@@ -25,7 +25,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
     $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS posto (id integer primary key autoincrement, name text, bandeira text, lat float, lng float)");
 
-    $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS preco (id integer primary key autoincrement, id_posto integer, gas float, alc float, FOREIGN KEY (id_posto) REFERENCES posto(id))");
+    $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS preco (id integer primary key autoincrement, id_posto integer, gas float, alc float, datapreco timestamp default current_timestamp, FOREIGN KEY (id_posto) REFERENCES posto(id))");
 
     $cordovaSQLite.execute(db, "INSERT INTO posto (name, bandeira, lat, lng) VALUES ('Posto Tico e Teca', 'BR', -6.756094290841853, -38.23115587234497)");
 
