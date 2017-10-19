@@ -7,6 +7,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       cordova.plugins.Keyboard.disableScroll(true);
 
     }
+
     if (window.StatusBar) {
       StatusBar.styleDefault();
     }
@@ -34,8 +35,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+
+
+  $ionicConfigProvider.tabs.position('bottom'); //linha adicionada para colocar as tabs na parte de baixo da tela
+
   $stateProvider
+
 
   // setup an abstract state for the tabs directive
     .state('tab', {
@@ -52,7 +58,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       'tab-postos': {
         templateUrl: 'templates/tab-postos.html',
         controller: 'PostoCtrl'
-        // controller: 'DashCtrl'
       }
     }
   })
@@ -63,7 +68,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         'tab-postos': {
           templateUrl: 'templates/tab-cadastro.html',
           controller: 'PostoCtrl'
-
         }
       }
     })
@@ -71,11 +75,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     .state('tab.detail', {
       url: '/postos/:postoId',
       views: {
-        // 'chat-detail': {
-          'tab-postos': {
+        'tab-postos': {
           templateUrl: 'templates/chat-detail.html',
           controller: 'PostoDetailCtrl'
-
         }
       }
     })
@@ -83,44 +85,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     .state('tab.precos', {
       url: '/postos/precos/:postoId',
       views: {
-        // 'chat-detail': {
           'tab-postos': {
           templateUrl: 'templates/tab-precos.html',
           controller: 'PrecosCtrl'
-          // controller: 'PostoDetailCtrl'
-
         }
       }
     })
-
-  // .state('tab.postos', {
-  //     url: '/postos',
-  //     views: {
-  //       'tab-postos': {
-  //         templateUrl: 'templates/tab-postos.html',
-  //         controller: 'PostoCtrl'
-  //       }
-  //     }
-  //   })
-    // .state('tab.chat-detail', {
-    //   url: '/chats/:chatId',
-    //   views: {
-    //     'tab-chats': {
-    //       templateUrl: 'templates/chat-detail.html',
-    //       controller: 'ChatDetailCtrl'
-    //     }
-    //   }
-    // })
-
-  // .state('tab.precos', {
-  //   url: '/precos',
-  //   views: {
-  //     'tab-precos': {
-  //       templateUrl: 'templates/tab-precos.html',
-  //       controller: 'PrecosCtrl'
-  //     }
-  //   }
-  // })
 
   .state('tab.map', {
     url: '/map',
