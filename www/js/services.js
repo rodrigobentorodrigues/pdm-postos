@@ -79,7 +79,7 @@ angular.module('starter.services', [])
   self.allByPosto = function(postoId) {
     var parameters = [postoId];
     // return DBA.query("SELECT id, gas, alc, datapreco FROM preco WHERE id_posto = (?) order by id desc", parameters)
-    return DBA.query("SELECT id, gas, alc, strftime('%d/%m/%Y %H:%M', datapreco, 'localtime') as datapreco FROM preco WHERE id_posto = (?) order by datapreco desc", parameters)
+    return DBA.query("SELECT id, gas, alc, die, strftime('%d/%m/%Y %H:%M:%S', datapreco, 'localtime') as datapreco FROM preco WHERE id_posto = (?) order by datapreco desc", parameters)
     // return DBA.query("SELECT id, gas, alc, datapreco FROM preco WHERE id_posto = (?) order by datapreco desc", parameters)
       .then(function(result){
         return DBA.getAll(result);
@@ -87,8 +87,8 @@ angular.module('starter.services', [])
   }
 
   self.add = function(preco) {
-    var parameters = [preco.id_posto, preco.gas, preco.alc];
-    return DBA.query("INSERT INTO preco (id_posto, gas, alc) VALUES (?, ?, ?)", parameters);
+    var parameters = [preco.id_posto, preco.gas, preco.alc, preco.die];
+    return DBA.query("INSERT INTO preco (id_posto, gas, alc, die) VALUES (?, ?, ?, ?)", parameters);
   }
 
   return self;
