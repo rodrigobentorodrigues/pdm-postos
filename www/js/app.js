@@ -13,19 +13,23 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
     if(window.cordova) {
       // App syntax
-      db = $cordovaSQLite.openDB("myapp.db");
+      db = $cordovaSQLite.openDB("postos.db");
     } else {
       // Ionic serve syntax
-      db = window.openDatabase("myapp.db", "1.0", "My app", -1);
+      db = window.openDatabase("postos.db", "1.0", "My app", -1);
     }
 
     console.log('criando banco');
     $cordovaSQLite.execute(db, "drop table posto");
+    $cordovaSQLite.execute(db, "drop table preco");
 
     $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS posto (id integer primary key autoincrement, name text, bandeira text, lat float, lng float)");
 
-    $cordovaSQLite.execute(db, "INSERT INTO posto (name, bandeira, lat, lng) VALUES ('teste', 'BR', -6.756094290841853, -38.23115587234497)");
-    console.log('inserido');
+    $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS preco (id integer primary key autoincrement, id_posto integer, gas float, alc float, FOREIGN KEY (id_posto) REFERENCES posto(id))");
+
+    $cordovaSQLite.execute(db, "INSERT INTO posto (name, bandeira, lat, lng) VALUES ('Posto Tico e Teca', 'BR', -6.756094290841853, -38.23115587234497)");
+
+    $cordovaSQLite.execute(db, "INSERT INTO preco (id_posto, gas, alc) VALUES (1, 3.99, 2.89)");
 
   });
 })
@@ -71,6 +75,19 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           'tab-postos': {
           templateUrl: 'templates/chat-detail.html',
           controller: 'PostoDetailCtrl'
+
+        }
+      }
+    })
+
+    .state('tab.precos', {
+      url: '/postos/precos/:postoId',
+      views: {
+        // 'chat-detail': {
+          'tab-postos': {
+          templateUrl: 'templates/tab-precos.html',
+          controller: 'PrecosCtrl'
+          // controller: 'PostoDetailCtrl'
 
         }
       }

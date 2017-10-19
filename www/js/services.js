@@ -59,6 +59,7 @@ angular.module('starter.services', [])
     var parameters = [postoId];
     return DBA.query("SELECT id, name, bandeira, lat, lng FROM posto WHERE id = (?)", parameters)
       .then(function(result) {
+
         return DBA.getById(result);
       });
   }
@@ -66,6 +67,26 @@ angular.module('starter.services', [])
   self.add = function(posto) {
     var parameters = [posto.name, posto.bandeira, posto.lat, posto.lng];
     return DBA.query("INSERT INTO posto (name, bandeira, lat, lng) VALUES (?, ?, ?, ?)", parameters);
+  }
+
+  return self;
+})
+
+// -> preços
+.factory('Precos', function($cordovaSQLite, DBA) {
+  var self = this;
+
+  self.allByPosto = function(postoId) {
+    var parameters = [postoId];
+    return DBA.query("SELECT id, gas, alc FROM preco WHERE id_posto = (?) order by id desc", parameters)
+      .then(function(result){
+        return DBA.getAll(result);
+      });
+  }
+
+  self.add = function(preco) {
+    var parameters = [preco.id_posto, preco.gas, preco.alc];
+    return DBA.query("INSERT INTO preco (id_posto, gas, alc) VALUES (?, ?, ?)", parameters);
   }
 
   return self;
